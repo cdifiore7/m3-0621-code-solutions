@@ -45,10 +45,16 @@
     "react": "^17.0.2",
     "stylelint": "^13.8.0",
     "stylelint-config-recommended": "^5.0.0",
-    "stylelint-config-standard": "^22.0.0"
+    "stylelint-config-standard": "^22.0.0",
+    "webpack": "^5.40.0",
+    "webpack-cli": "^4.7.2"
   },
   "scripts": {
+    "build": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "jquery": "^3.6.0"
+  }
 }

@@ -8,7 +8,7 @@ function CustomButton (props) {
 const element = (
   <div>
     <CustomButton text="I" />
-    <CustomButton text="know" />
+    <CustomButton text="Know" />
     <CustomButton text="React!" />
   </div>
 );

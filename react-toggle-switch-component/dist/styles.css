@@ -1,6 +1,26 @@
 .on {
   background-color: green;
 }
+.on-button {
+  right: 0;
+}
 .off {
   background-color: lightgray;
+}
+.off-button{
+  left: 0;
+}
+.toggle-slider {
+  border-radius: 10px;
+  height: 25px;
+  width: 60px;
+  position: relative;
+  display: inline-block;
+}
+.toggle-button {
+  background-color: white;
+  border-radius: 50%;
+  height: 25px;
+  position: absolute;
+  width: 30px;
 }

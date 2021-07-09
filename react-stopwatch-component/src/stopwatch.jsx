@@ -54,15 +54,15 @@ class StopWatch extends React.Component {
   }
 
   render() {
-    const clocktimer = this.clock();
+    const clockicon = this.clock();
     const timercount = this.state.timeCount;
     return (
-    <div className= "clock-container">
-      <div className="clock-circle" onClick= {this.handleReset}>
+    <div className= "container">
+      <div className="circle" onClick= {this.handleReset}>
       <div className = "counter">{timercount}</div>
     </div>
-    <div className= "timercontrols">
-    <div onClick={this.handleClick} className= {clocktimer}></div>
+    <div className= "controls">
+    <div onClick={this.handleClick} className= {clockicon}></div>
     </div>
     </div>
     );

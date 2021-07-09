@@ -1,0 +1,18 @@
+.container .circle .counter {
+  margin: auto;
+}
+.container .controls {
+  text-align: center;
+}
+.container .circle {
+  border: 1px solid;
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+  display: flex;
+}
+.circle {
+  font-size: 2.5rem;
+  margin: 2rem auto;
+  width: 100px;
+}

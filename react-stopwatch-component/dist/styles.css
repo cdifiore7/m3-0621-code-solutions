@@ -1,0 +1,13 @@
+.clock-container .clock-circle .counter .timercontrols {
+  text-align: center;
+}
+.clock-container {
+  flex-direction: column;
+}
+
+.clock-circle {
+  border-radius: 150%;
+  padding: 1rem;
+  font-size: 1.5rem;
+  margin: 1rem;
+}

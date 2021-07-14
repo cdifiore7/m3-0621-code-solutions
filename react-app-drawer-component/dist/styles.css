@@ -1,0 +1,13 @@
+.container{
+  position: fixed;
+  width: 20%;
+  height: 100%;
+  left: 10;
+}
+.mainbody{
+  position: fixed;
+  height: 100%;
+  width: 80%;
+  right: 0;
+  background-color: gold;
+}

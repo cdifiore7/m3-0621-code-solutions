@@ -1,5 +1,5 @@
 const express = require('express');
-var app = express();
+const app = express();
 const path = require('path');
 const url = path.join(__dirname, 'public');
 const pathstatic = express.static(url);

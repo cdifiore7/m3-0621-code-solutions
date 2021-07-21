@@ -58,7 +58,7 @@ export default class App extends React.Component {
     * TIP: Use Array.prototype.concat to create a new array containing the contents
     * of the old array, plus the object returned by the server.
     */
-  }
+
 
   toggleCompleted(todoId) {
     let matchingToDo;

@@ -43,7 +43,7 @@ export default class App extends React.Component {
       updatedToDo.push(newEntry);
       this.setState({ todos: updatedToDo });
     });
-  });
+  };
     /**
     * Use fetch to send a POST request to `/api/todos`.
     * Then 😉, once the response JSON is received and parsed,
@@ -85,7 +85,7 @@ export default class App extends React.Component {
     })
     .catch(error => {
       console.error('error:', error)
-    });
+    };
 }
     /**
      * Find the index of the todo with the matching todoId in the state array.

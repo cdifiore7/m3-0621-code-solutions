@@ -39,7 +39,7 @@ export default class App extends React.Component {
     })
       .then(res => res.json())
       .then(newEntry => {
-        const updatedToDo = [...this.state.todos];
+        const updatedToDo = [...this.state.todos, newEntry];
         updatedToDo.push(newEntry);
         this.setState({ todos: updatedToDo });
       });
@@ -67,7 +67,7 @@ export default class App extends React.Component {
         matchingToDo = i;
       }
     }
-    const todos = this.state.todos;
+    const todos = this.state.todos.slice();
     const isCompletedstatus = !todos[matchingToDo].isCompleted;
     fetch(`/api/todos/${todoId}`, {
       method: 'PATCH',
@@ -78,7 +78,7 @@ export default class App extends React.Component {
     })
       .then(response => response.json())
       .then(data => {
-        const newTodo = { ...this.state.todos };
+        const newTodo = [...this.state.todos];
         newTodo[matchingToDo] = data;
         this.setState({ todos: newTodo });
       })

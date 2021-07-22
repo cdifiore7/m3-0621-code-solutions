@@ -37,7 +37,7 @@ app.post('/api/grades', (req, res, next) => {
     throw new ClientError(400, 'name course score required');
   }
   if (!Number.isInteger(score) || score < 0 || score > 100) {
-    throw new ClientError(400, 'gradeId must be a between 0 and 100'); s;
+    throw new ClientError(400, 'gradeId must be a between 0 and 100');
   }
   const sql = `
     insert into "grades" ("name", "course", "score")
@@ -68,7 +68,7 @@ app.get('/api/grades/:gradeId', (req, res, next) => {
     .then(result => {
       const [grade] = result.rows;
       if (!grade) {
-        throw new ClientError(400, `cannot find grade with gradeId ${gradeId}`);
+        throw new ClientError(404, `cannot find grade with gradeId ${gradeId}`);
       } else {
         res.json(grade);
       }

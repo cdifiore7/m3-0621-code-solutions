@@ -68,9 +68,7 @@ app.get('/api/grades/:gradeId', (req, res, next) => {
     .then(result => {
       const [grade] = result.rows;
       if (!grade) {
-        res.status(404).json({
-          error: `cannot find grade with gradeId ${gradeId}`
-        });
+        throw new ClientError(404, `cannot find grade with gradeId ${gradeId}`);
       } else {
         res.json(grade);
       }

@@ -4,6 +4,7 @@ const argon2 = require('argon2'); // eslint-disable-line
 const express = require('express');
 const ClientError = require('./client-error');
 const errorMiddleware = require('./error-middleware');
+const { response } = require('express');
 
 const db = new pg.Pool({ // eslint-disable-line
   connectionString: process.env.DATABASE_URL,
@@ -34,27 +35,12 @@ app.post('/api/auth/sign-up', (req, res, next) => {
         const params = [username, hashedPassword];
         db.query(sql, params)
           .then(result => {
-            res.status(201).json(result.rows[0]);
-          });
+            res.status(201).json(response.rows[0]);
+          })
+          .catch(err => next(err));
       })
-      .catch(err => {
-        console.error(err);
-      });
+      .catch(err => next(err));
   }
-  /* your code starts here */
-
-  /**
-   * Hash the user's password with `argon2.hash()`
-   * Then, 😉
-   *   Insert the user's "username" and "hashedPassword" into the "users" table.
-   *   Then, 😉
-   *     Respond to the client with a 201 status code and the new user's "userId", "username", and "createdAt" timestamp.
-   *   Catch any errors.
-   * Catch any errors.
-   *
-   * Hint: Insert statements can include a `returning` clause to retrieve the insterted row(s).
-   */
-
 });
 
 app.use(errorMiddleware);

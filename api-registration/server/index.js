@@ -35,6 +35,9 @@ app.post('/api/auth/sign-up', (req, res, next) => {
         .then(result => {
           res.status(201).json(result.rows[0]);
         });
+    })
+    .catch(err => {
+      console.error(err);
     });
   /* your code starts here */
 
